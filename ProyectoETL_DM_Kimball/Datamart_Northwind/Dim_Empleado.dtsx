@@ -1,0 +1,2944 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/11/2025 7:21:31 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MSI"
+  DTS:CreatorName="MSI\luis2"
+  DTS:DTSID="{DD0475A3-FBB1-4C85-91FA-A98D14E9B68F}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="3082"
+  DTS:ObjectName="Dim_Empleado"
+  DTS:PackageType="5"
+  DTS:VersionBuild="39"
+  DTS:VersionGUID="{806FC0A2-6DD2-4976-A712-30EEECE59337}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Datamart_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{D7FE4C55-BD41-49C0-8CAF-303B06453585}"
+      DTS:ObjectName=".,1422.Datamart_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Datamart_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Dim_Empleado-{D7FE4C55-BD41-49C0-8CAF-303B06453585}.,1422.Datamart_Northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWcIuDtuKjkWJhOT2JDNABAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAACklzyCO0gJq3U/oysom2cxDZTOVm7Aizv+NyaGYHu4PQAAAAAOgAAAAAIAACAAAADroq2tF2AZvnnzLFot6jPIgevnWmkauUbeySz5aPpeESAAAACnPTnU9qCu0mipjI2QSdHh8uCGFt/aojnqz3Uib5/F50AAAADxmEk29EXrGrvsnSTMnGLEIlePLsxFUSzPhTj7uRxsjM5LZywtoXyMhdcpdWzfCXQemsIlzlc2gRLekb+wBLUN</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.NORTHWIND_METADATA.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{013751F0-9F99-4005-8A61-CBC5918B10DF}"
+      DTS:ObjectName=".,1422.NORTHWIND_METADATA.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=NORTHWIND_METADATA;Provider=MSOLEDBSQL.1;Application Name=SSIS-Dim_Empleado-{013751F0-9F99-4005-8A61-CBC5918B10DF}.,1422.NORTHWIND_METADATA.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWcIuDtuKjkWJhOT2JDNABAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAADIkzGfJvjBVOLSrcOh8zE1HGbzys0RHb+dtVzr+cP6fgAAAAAOgAAAAAIAACAAAADfUowAqZqTdE9SRweP9mSGnVOQ8olCyKRo8U+RtUKu8CAAAACg6/z+jQGT17rFXC82LHMfkVi8NVy1vfRBWvmrOvR5JUAAAAAI6XegK27vqZNU56HRNl2yo/k/wVgNyWr4RO7CvICv6CjzfEeEuhU5zItwWF8D3k7sRhsecdf3FKH8ZUr/zCan</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{6138CCBF-90F1-44BB-84B8-6DB52B05BEB0}"
+      DTS:ObjectName=".,1422.Stage_Northwind.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=.,1422;User ID=sa;Initial Catalog=Stage_Northwind;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Dim_Empleado-{6138CCBF-90F1-44BB-84B8-6DB52B05BEB0}.,1422.Stage_Northwind.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAWcIuDtuKjkWJhOT2JDNABAAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAC4Fwes+PCA1weWsveFPPZka+ELr/JCOWFAIPGMWahR5wAAAAAOgAAAAAIAACAAAAD6VfBf1fyHfkp9hsh1VXG2RUyCPVGG4Qc7P0Pt4MRLiyAAAABVzSPLK6/3kBCAy8yEiffgrTp7vEa5p8rQ6N/VRQ9PkUAAAAAJNRgmmdSO2XyM2Yqdq7rBV7ITuXd3Z5K/dyNH/Jb0N31zYTD3sN2Lecg6IGz8GzptzX0Bvw/oFarf8/nPlTfR</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9CEAAC8F-FCB9-4A75-A925-C2124809A355}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistroNuevo">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{84A11BE0-16F9-4156-B13A-31FED0A35D09}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLCantidadRegistrosModificados">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9F10B66E-5D71-4325-B83E-06C1C921E321}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ETLExecution">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data_Flow_Empleado"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{B638E19C-BDB6-41AA-A796-0E7DC4721F80}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data_Flow_Empleado"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Actualizar Registros en el Datamart"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [Datamart_Northwind].[dbo].[Dim_Employee]
+SET [Datamart_Northwind].[dbo].[Dim_Employee].full_name = S.Empleado_NombreCompleto,
+	[Datamart_Northwind].[dbo].[Dim_Employee].Region = S.Empleado_Region,
+	[Datamart_Northwind].[dbo].[Dim_Employee].City = S.Empleado_Ciudad,
+	[Datamart_Northwind].[dbo].[Dim_Employee].Country = S.Empleado_Pais
+FROM [Datamart_Northwind].[dbo].[Dim_Employee]
+JOIN
+	[Stage_Northwind].[dbo].[Stage_Empleado] AS S
+ON [Datamart_Northwind].[dbo].[Dim_Employee].employee_id = S.Empleado_Codigo
+WHERE [Datamart_Northwind].[dbo].[Dim_Employee].employeeid_nk = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_Northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_Northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Inputs[Entrada de comando de OLE DB].Columns[employee_id]"
+                      cachedDataType="i4"
+                      cachedName="employee_id"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[employee_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados"
+              componentClassID="Microsoft.RowSampling"
+              contactInfo="Muestreo de fila;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Muestrea aleatoriamente un número específico de filas de un flujo de datos de entrada. Por ejemplo, se puede usar para seleccionar aleatoriamente los productos que se van a mostrar en un sitio web."
+              name="Cantidad de Registros Modificados">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número de filas de la muestra."
+                  expressionType="Notify"
+                  name="SamplingValue">10</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la semilla para el generador de números aleatorios."
+                  name="SamplingSeed">0</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1]"
+                  name="Entrada de Muestreo de fila 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[Empleado_Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Region"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Region]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[Empleado_Pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Pais"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Pais]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[Empleado_NombreCompleto]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="Empleado_NombreCompleto"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_NombreCompleto]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[Empleado_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Empleado_Codigo"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[Empleado_Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Ciudad"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Ciudad]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Region"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[full_name]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="full_name"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[full_name]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[employeeid_nk]"
+                      cachedDataType="i4"
+                      cachedName="employeeid_nk"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[employee_id]"
+                      cachedDataType="i4"
+                      cachedName="employee_id"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employee_id]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Country"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="City"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[City]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo]"
+                  name="Salida seleccionada de muestreo">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Salida para filas de la muestra"
+                      name="Selected">true</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Empleado_Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Empleado_Region]"
+                      name="Empleado_Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Empleado_Pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Empleado_Pais]"
+                      name="Empleado_Pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Pais]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Empleado_NombreCompleto]"
+                      name="Empleado_NombreCompleto">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_NombreCompleto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Empleado_Ciudad]"
+                      name="Empleado_Ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Region]"
+                      name="Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[full_name]"
+                      name="full_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[full_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[employeeid_nk]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[employeeid_nk]"
+                      name="employeeid_nk">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[employee_id]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[employee_id]"
+                      name="employee_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employee_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[Country]"
+                      name="Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[City]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida seleccionada de muestreo].Columns[City]"
+                      name="City">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo]"
+                  name="Salida no seleccionada de muestreo">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Salida para filas de la muestra"
+                      name="Selected">false</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Empleado_Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Empleado_Region]"
+                      name="Empleado_Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Empleado_Pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Empleado_Pais]"
+                      name="Empleado_Pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Pais]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Empleado_NombreCompleto]"
+                      name="Empleado_NombreCompleto">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_NombreCompleto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Empleado_Ciudad]"
+                      name="Empleado_Ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Region]"
+                      name="Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[full_name]"
+                      name="full_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[full_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[employeeid_nk]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[employeeid_nk]"
+                      name="employeeid_nk">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[employee_id]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[employee_id]"
+                      name="employee_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employee_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Country]"
+                      name="Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[City]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[City]"
+                      name="City">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de entrada"
+                          name="InputColumnLineageID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\Cantidad Registros Nuevos"
+              componentClassID="Microsoft.RowCount"
+              contactInfo="Recuento de filas;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Cuenta las filas a medida que pasan por un flujo de datos. Por ejemplo, se usa el número de filas procesadas para determinar si deben o no realizarse operaciones de limpieza o actualizar el texto de un mensaje de correo electrónico para comunicar el estado de procesamiento."
+              name="Cantidad Registros Nuevos">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el recuento de filas."
+                  name="VariableName">User::ETLCantidadRegistroNuevo</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data_Flow_Empleado\Cantidad Registros Nuevos.Inputs[Entrada de Recuento de filas 1]"
+                  hasSideEffects="true"
+                  name="Entrada de Recuento de filas 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Cantidad Registros Nuevos.Outputs[Salida de Recuento de filas 1]"
+                  name="Salida de Recuento de filas 1"
+                  synchronousInputId="Package\Data_Flow_Empleado\Cantidad Registros Nuevos.Inputs[Entrada de Recuento de filas 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\Combinación de mezcla"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Combinación de mezcla;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Combina dos flujos de datos ordenados en uno solo mediante la combinación FULL, LEFT o INNER. Se recomienda esta transformación cuando se pueden ordenar los flujos de datos en sus orígenes."
+              name="Combinación de mezcla"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el tipo de combinación que se debe realizar."
+                  name="JoinType"
+                  typeConverter="JoinType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número de columnas de la clave de ordenación."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores NULL se tratan como valores iguales."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indica la cantidad máxima solicitada de búferes por entrada antes del bloqueo."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+                  hasSideEffects="true"
+                  name="Entrada izquierda de combinación de mezcla">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Empleado_Codigo"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Codigo]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Region"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Region]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Pais"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Pais]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_NombreCompleto]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="Empleado_NombreCompleto"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_NombreCompleto]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Ciudad"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Ciudad]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+                  hasSideEffects="true"
+                  name="Entrada derecha de combinación de mezcla">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[employeeid_nk]"
+                      cachedDataType="i4"
+                      cachedName="employeeid_nk"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employeeid_nk]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Region"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[full_name]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="full_name"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[full_name]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[employee_id]"
+                      cachedDataType="i4"
+                      cachedName="employee_id"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employee_id]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Country"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[Country]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="City"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[City]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla]"
+                  isSorted="true"
+                  name="Salida de combinación de mezcla">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Region]"
+                      name="Empleado_Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Pais]"
+                      name="Empleado_Pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Pais]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_NombreCompleto]"
+                      name="Empleado_NombreCompleto">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_NombreCompleto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Codigo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Ciudad]"
+                      name="Empleado_Ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla].Columns[Empleado_Ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Region]"
+                      name="Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[full_name]"
+                      name="full_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[full_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]"
+                      name="employeeid_nk">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[employeeid_nk]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employee_id]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employee_id]"
+                      name="employee_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[employee_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Country]"
+                      name="Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[Country]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[City]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[City]"
+                      name="City">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="La columna de entrada asociada a esta columna de salida"
+                          name="InputColumnID">#{Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\Datamart Employee"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="Datamart Employee"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[dim_employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data_Flow_Empleado\Datamart Employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_Northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_Northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].Columns[Empleado_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Empleado_Codigo"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[employeeid_nk]"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].Columns[Empleado_NombreCompleto]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="Empleado_NombreCompleto"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[full_name]"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_NombreCompleto]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].Columns[Empleado_Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Region"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[Region]"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Region]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].Columns[Empleado_Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Ciudad"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Ciudad]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].Columns[Empleado_Pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Pais"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[Country]"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Pais]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[employee_id]"
+                      dataType="i4"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[employeeid_nk]"
+                      dataType="i4"
+                      name="employeeid_nk" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      name="full_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="15"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="15"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      name="Country" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Datamart Employee.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Datamart Employee.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Datamart Employee.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Datamart Employee.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\Dim_Employee"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Dim_Employee"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[dim_employee]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data_Flow_Empleado\Dim_Employee.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Datamart_Northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Datamart_Northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[employee_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[employee_id]"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[employee_id]"
+                      name="employee_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[employeeid_nk]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[employeeid_nk]"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[employeeid_nk]"
+                      name="employeeid_nk"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[full_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[full_name]"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[full_name]"
+                      name="full_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[Region]"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[Region]"
+                      name="Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[Country]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[Country]"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[Country]"
+                      name="Country"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[employee_id]"
+                      dataType="i4"
+                      name="employee_id" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[employeeid_nk]"
+                      dataType="i4"
+                      name="employeeid_nk" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      name="full_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[Region]"
+                      dataType="wstr"
+                      length="15"
+                      name="Region" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="15"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].ExternalColumns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      name="Country" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[employee_id]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[employee_id]"
+                      name="employee_id" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[employeeid_nk]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[employeeid_nk]"
+                      name="employeeid_nk" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[full_name]"
+                      name="full_name" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[Region]"
+                      name="Region" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[City]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[Country]"
+                      name="Country" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\División condicional"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="División condicional;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Enruta filas de datos a diferentes salidas según el contenido de los datos. Se usan condiciones (expresiones de SSIS) para especificar las filas que se van a enrutar. Por ejemplo, se usa para separar los registros que deben limpiarse de los registros listos para ser cargados o para enrutar solamente un subconjunto de registros."
+              name="División condicional"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Data_Flow_Empleado\División condicional.Inputs[Entrada de división condicional]"
+                  description="Entrada en la transformación División condicional"
+                  name="Entrada de división condicional">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\División condicional.Inputs[Entrada de división condicional].Columns[employeeid_nk]"
+                      cachedDataType="i4"
+                      cachedName="employeeid_nk"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\División condicional.Inputs[Entrada de división condicional].Columns[Empleado_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Empleado_Codigo"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\División condicional.Outputs[Empleado Nuevo]"
+                  description="Salida 1 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Empleado Nuevo"
+                  synchronousInputId="Package\Data_Flow_Empleado\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">[ISNULL](#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(employeeid_nk)</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data_Flow_Empleado\División condicional.Outputs[Empleados_Modificados]"
+                  description="Salida 2 de la transformación División condicional"
+                  errorOrTruncationOperation="Cálculo"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Empleados_Modificados"
+                  synchronousInputId="Package\Data_Flow_Empleado\División condicional.Inputs[Entrada de división condicional]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la expresión. Esta versión de expresión usa identificadores de linaje en lugar de nombres de columna."
+                      name="Expression">#{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[Empleado_Codigo]} != #{Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla].Columns[employeeid_nk]}</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica la versión descriptiva de la expresión. Esta versión de expresión usa nombres de columna."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Empleado_Codigo != employeeid_nk</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica la posición de la condición en la lista de condiciones que evalúa la transformación. El orden de evaluación es del menor al mayor valor."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data_Flow_Empleado\División condicional.Outputs[Salida predeterminada de división condicional]"
+                  description="Salida predeterminada de la transformación División condicional"
+                  exclusionGroup="1"
+                  name="Salida predeterminada de división condicional"
+                  synchronousInputId="Package\Data_Flow_Empleado\División condicional.Inputs[Entrada de división condicional]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data_Flow_Empleado\División condicional.Outputs[Salida de error de división condicional]"
+                  description="Salida de error de la transformación División condicional"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de división condicional"
+                  synchronousInputId="Package\Data_Flow_Empleado\División condicional.Inputs[Entrada de división condicional]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\División condicional.Outputs[Salida de error de división condicional].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Ejecuta una instrucción SQL para cada fila de un flujo de datos. Por ejemplo, se usa para llamar al procedimiento almacenado de configuración de nuevo empleado para cada fila de la tabla de nuevos empleados. Nota: la ejecución de una instrucción SQL para cada fila de un flujo de datos de gran tamaño puede tardar mucho tiempo."
+              name="Insertar Registros Dim Empleado MOD"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">INSERT INTO [STAGE_NORTHWIND].[dbo].[Dim_Empleado_Mod]
+([Empleado_Codigo], [Empleado_NombreCompleto], [Empleado_Ciudad], [Empleado_Region], [Empleado_Pais], [ETLLoad])
+VALUES
+(?, ?, ?, ?, ?, GETDATE())</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB]"
+                  errorOrTruncationOperation="Ejecución de comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de comando de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].Columns[employee_id]"
+                      cachedDataType="i4"
+                      cachedName="employee_id"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[employee_id]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].Columns[full_name]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="full_name"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[full_name]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Region"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Region]" />
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Country"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo].Columns[Country]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="70"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Información de parámetros. Coincide con los valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Outputs[Salida de comando de OLE DB]"
+                  exclusionGroup="1"
+                  name="Salida de comando de OLE DB"
+                  synchronousInputId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Outputs[Salida de error de comando de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de comando de OLE DB"
+                  synchronousInputId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Outputs[Salida de error de comando de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Outputs[Salida de error de comando de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\Multidifusión"
+              componentClassID="Microsoft.Multicast"
+              contactInfo="Multidifusión;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Distribuye cada fila de entrada a cada una de las filas de una o varias salidas. Por ejemplo, se crea una bifurcación de un flujo de datos para realizar una copia de los datos de modo que se puedan enmascarar algunos valores antes de compartirlos con los asociados externos."
+              name="Multidifusión">
+              <inputs>
+                <input
+                  refId="Package\Data_Flow_Empleado\Multidifusión.Inputs[Entrada de Multidifusión 1]"
+                  name="Entrada de Multidifusión 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Multidifusión.Outputs[Salida de Multidifusión 1]"
+                  dangling="true"
+                  deleteOutputOnPathDetached="true"
+                  name="Salida de Multidifusión 1"
+                  synchronousInputId="Package\Data_Flow_Empleado\Multidifusión.Inputs[Entrada de Multidifusión 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar Dim Empleado"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[employee_id]"
+                      cachedDataType="i4"
+                      cachedName="employee_id"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[employee_id]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[employeeid_nk]"
+                      cachedDataType="i4"
+                      cachedName="employeeid_nk"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[employeeid_nk]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[full_name]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="full_name"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[full_name]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Region"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[Region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[City]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="City"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[City]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación].Columns[Country]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Country"
+                      lineageId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[Country]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employee_id]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employee_id]"
+                      name="employee_id">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[employee_id]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employeeid_nk]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[employeeid_nk]"
+                      name="employeeid_nk"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[employeeid_nk]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[full_name]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[full_name]"
+                      name="full_name">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[full_name]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[Region]"
+                      name="Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[City]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[City]"
+                      name="City">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[City]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[Country]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación].Columns[Country]"
+                      name="Country">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB].Columns[Country]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado"
+              componentClassID="Microsoft.Sort"
+              contactInfo="Ordenar;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Ordena los datos de entrada de manera ascendente o descendente cuando no es posible ordenarlos en su origen. Por ejemplo, se ordenan los datos de ventas por 'id. de cliente' antes de que se escriban en un archivo plano y se entreguen a otro departamento. Nota: no se recomienda realizar esta transformación para grandes flujos de datos."
+              name="Ordenar Stage Empleado"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si la transformación Ordenar quita filas con valores de ordenación duplicados."
+                  name="EliminateDuplicates">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el número máximo de subprocesos que se deben usar para la ordenación."
+                  expressionType="Notify"
+                  name="MaximumThreads">-1</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación]"
+                  name="Entrada de ordenación">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación].Columns[Empleado_Codigo]"
+                      cachedDataType="i4"
+                      cachedName="Empleado_Codigo"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación].Columns[Empleado_NombreCompleto]"
+                      cachedDataType="wstr"
+                      cachedLength="61"
+                      cachedName="Empleado_NombreCompleto"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_NombreCompleto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación].Columns[Empleado_Region]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Region"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Region]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación].Columns[Empleado_Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Ciudad"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Ciudad]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación].Columns[Empleado_Pais]"
+                      cachedDataType="wstr"
+                      cachedLength="15"
+                      cachedName="Empleado_Pais"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Pais]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica las opciones de comparación para datos de caracteres."
+                          name="NewComparisonFlags">0</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Especifica el criterio de ordenación de la columna."
+                          name="NewSortKeyPosition">0</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación]"
+                  isSorted="true"
+                  name="Salida de ordenación">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_NombreCompleto]"
+                      name="Empleado_NombreCompleto">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_NombreCompleto]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Region]"
+                      name="Empleado_Region">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Region]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Ciudad]"
+                      name="Empleado_Ciudad">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Ciudad]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación].Columns[Empleado_Pais]"
+                      name="Empleado_Pais">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica el identificador de linaje de la columna de entrada que está asociada a esta columna de salida."
+                          name="SortColumnId">#{Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Pais]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data_Flow_Empleado\Stage_Empleado"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Stage_Empleado"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=16.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+	se.Empleado_Codigo,
+	CAST(se.Empleado_NombreCompleto AS NVARCHAR (61)) AS Empleado_NombreCompleto,
+	CAST(se.Empleado_Region AS NVARCHAR (15)) AS Empleado_Region,
+	CAST(se.Empleado_Ciudad AS NVARCHAR (15)) AS Empleado_Ciudad,
+	CAST(se.Empleado_Pais AS NVARCHAR (15)) AS Empleado_Pais
+	FROM Stage_Northwind.dbo.Stage_Empleado as se</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data_Flow_Empleado\Stage_Empleado.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  connectionManagerRefId="Package.ConnectionManagers[.,1422.Stage_Northwind.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Codigo]"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_NombreCompleto]"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_NombreCompleto]"
+                      name="Empleado_NombreCompleto"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Region]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Region]"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Region]"
+                      name="Empleado_Region"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Ciudad]"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Ciudad]"
+                      name="Empleado_Ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Pais]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Pais]"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].Columns[Empleado_Pais]"
+                      name="Empleado_Pais"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Codigo]"
+                      dataType="i4"
+                      name="Empleado_Codigo" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      length="61"
+                      name="Empleado_NombreCompleto" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Region]"
+                      dataType="wstr"
+                      length="15"
+                      name="Empleado_Region" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      name="Empleado_Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB].ExternalColumns[Empleado_Pais]"
+                      dataType="wstr"
+                      length="15"
+                      name="Empleado_Pais" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Codigo]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Codigo]"
+                      name="Empleado_Codigo" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_NombreCompleto]"
+                      dataType="wstr"
+                      length="61"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_NombreCompleto]"
+                      name="Empleado_NombreCompleto" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Region]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Region]"
+                      name="Empleado_Region" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Ciudad]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Ciudad]"
+                      name="Empleado_Ciudad" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Pais]"
+                      dataType="wstr"
+                      length="15"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[Empleado_Pais]"
+                      name="Empleado_Pais" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data_Flow_Empleado.Paths[Empleado Nuevo]"
+              endId="Package\Data_Flow_Empleado\Cantidad Registros Nuevos.Inputs[Entrada de Recuento de filas 1]"
+              name="Empleado Nuevo"
+              startId="Package\Data_Flow_Empleado\División condicional.Outputs[Empleado Nuevo]" />
+            <path
+              refId="Package\Data_Flow_Empleado.Paths[Empleados_Modificados]"
+              endId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Inputs[Entrada de Muestreo de fila 1]"
+              name="Empleados_Modificados"
+              startId="Package\Data_Flow_Empleado\División condicional.Outputs[Empleados_Modificados]" />
+            <path
+              refId="Package\Data_Flow_Empleado.Paths[Salida de comando de OLE DB]"
+              endId="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart.Inputs[Entrada de comando de OLE DB]"
+              name="Salida de comando de OLE DB"
+              startId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Outputs[Salida de comando de OLE DB]" />
+            <path
+              refId="Package\Data_Flow_Empleado.Paths[Salida de combinación de mezcla]"
+              endId="Package\Data_Flow_Empleado\División condicional.Inputs[Entrada de división condicional]"
+              name="Salida de combinación de mezcla"
+              startId="Package\Data_Flow_Empleado\Combinación de mezcla.Outputs[Salida de combinación de mezcla]" />
+            <path
+              refId="Package\Data_Flow_Empleado.Paths[Salida de ordenación]"
+              endId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada izquierda de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Data_Flow_Empleado.Paths[Salida de ordenación1]"
+              endId="Package\Data_Flow_Empleado\Combinación de mezcla.Inputs[Entrada derecha de combinación de mezcla]"
+              name="Salida de ordenación"
+              startId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Outputs[Salida de ordenación]" />
+            <path
+              refId="Package\Data_Flow_Empleado.Paths[Salida de origen de OLE DB]"
+              endId="Package\Data_Flow_Empleado\Ordenar Stage Empleado.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Data_Flow_Empleado\Stage_Empleado.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\Data_Flow_Empleado.Paths[Salida de origen de OLE DB1]"
+              endId="Package\Data_Flow_Empleado\Ordenar Dim Empleado.Inputs[Entrada de ordenación]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Data_Flow_Empleado\Dim_Employee.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\Data_Flow_Empleado.Paths[Salida de Recuento de filas 1]"
+              endId="Package\Data_Flow_Empleado\Datamart Employee.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de Recuento de filas 1"
+              startId="Package\Data_Flow_Empleado\Cantidad Registros Nuevos.Outputs[Salida de Recuento de filas 1]" />
+            <path
+              refId="Package\Data_Flow_Empleado.Paths[Salida no seleccionada de muestreo]"
+              endId="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD.Inputs[Entrada de comando de OLE DB]"
+              name="Salida no seleccionada de muestreo"
+              startId="Package\Data_Flow_Empleado\Cantidad de Registros Modificados.Outputs[Salida no seleccionada de muestreo]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Cantidad Registros Nuevos y Modificados"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{7A2B067E-DC68-4CED-93FF-14CE045ED964}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Cantidad Registros Nuevos y Modificados"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{013751F0-9F99-4005-8A61-CBC5918B10DF}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET [ETLCountNewRegister] = ?,&#xA;    [ETLCountModifiedRegister] = ?&#xA;WHERE Id = ?&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLCantidadRegistroNuevo"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="User::ETLCantidadRegistrosModificados"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="User::ETLExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Cantidad Total"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{0a8bb8b4-9dc7-49b8-81c4-eee64b07ad72}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Cantidad Total"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{013751F0-9F99-4005-8A61-CBC5918B10DF}"
+          SQLTask:SqlStatementSource="UPDATE ETLExecution&#xA;SET [ETLCountRows]=([ETLCountNewRegister]+[ETLCountModifiedRegister])&#xA;WHERE Id = ?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::ETLExecution"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="3"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insertar Registro en el MetaData"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{7385C44D-8B1B-4C7E-8FF9-80706F5C5549}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insertar Registro en el MetaData"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{013751F0-9F99-4005-8A61-CBC5918B10DF}"
+          SQLTask:SqlStatementSource="INSERT INTO ETLExecution (UserName, MachineName, PackageName, ETLLoad)&#xA;VALUES(?,?,?,GETDATE())&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::UserName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="1"
+            SQLTask:DtsVariableName="System::MachineName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="2"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Obtener ID"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{0D62EC4F-3B11-4E1E-926D-F37120941C19}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Obtener ID"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{013751F0-9F99-4005-8A61-CBC5918B10DF}"
+          SQLTask:SqlStatementSource="SELECT TOP 1 ID FROM ETLExecution &#xA;WHERE PackageName = ?&#xA;ORDER BY ID DESC"
+          SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ResultBinding
+            SQLTask:ResultName="0"
+            SQLTask:DtsVariableName="User::ETLExecution" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="System::PackageName"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="130"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{5C61AABD-88C9-4D28-A27E-6829337F51BD}"
+      DTS:From="Package\Insertar Registro en el MetaData"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Obtener ID" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{A0BF0030-5FD7-45BB-87D6-DFAD61F5A541}"
+      DTS:From="Package\Obtener ID"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Data_Flow_Empleado" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{86BC218C-C84A-4B85-8D70-8E9D6682C055}"
+      DTS:From="Package\Data_Flow_Empleado"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Insertar Cantidad Registros Nuevos y Modificados" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{E4E00B89-8BF5-445D-9618-ED4702199841}"
+      DTS:From="Package\Insertar Cantidad Registros Nuevos y Modificados"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Insertar Cantidad Total" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180.8,41.6"
+          Id="Package\Data_Flow_Empleado"
+          TopLeft="123.571421819784,177.666665431195" />
+        <NodeLayout
+          Size="309.6,41.6"
+          Id="Package\Insertar Cantidad Registros Nuevos y Modificados"
+          TopLeft="60.7142823970034,245.761903052907" />
+        <NodeLayout
+          Size="184,41.6"
+          Id="Package\Insertar Cantidad Total"
+          TopLeft="123.80951704487,314.476188289362" />
+        <NodeLayout
+          Size="228,41.6"
+          Id="Package\Insertar Registro en el MetaData"
+          TopLeft="98.8095184108097,37.1428568845704" />
+        <NodeLayout
+          Size="128.8,41.6"
+          Id="Package\Obtener ID"
+          TopLeft="144.64284923992,101.523808817826" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="210.926183825365,78.7428568845704">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.7809519332553"
+              Start="0,0"
+              End="0,15.2809519332553">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2809519332553" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="211.507135529852,143.123808817826">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.542856613369"
+              Start="0,0"
+              End="0,27.042856613369">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.042856613369" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="214.742852108394,219.266665431195">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.495237621712"
+              Start="0,0"
+              End="0,18.995237621712">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.995237621712" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="215.661899720937,287.361903052907">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.114285236455"
+              Start="0,0"
+              End="0,19.614285236455">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.614285236455" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data_Flow_Empleado">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\Data_Flow_Empleado\División condicional"
+          TopLeft="238.611098073976,249.311109377433" />
+        <NodeLayout
+          Size="158.4,41.6"
+          Id="Package\Data_Flow_Empleado\Stage_Empleado"
+          TopLeft="95.4166614533305,37.9166664029989" />
+        <NodeLayout
+          Size="204.8,41.6"
+          Id="Package\Data_Flow_Empleado\Cantidad Registros Nuevos"
+          TopLeft="61.8749966192991,328.116664685392" />
+        <NodeLayout
+          Size="258.4,41.6"
+          Id="Package\Data_Flow_Empleado\Insertar Registros Dim Empleado MOD"
+          TopLeft="360.416646974369,398.916664052589" />
+        <NodeLayout
+          Size="239.2,41.6"
+          Id="Package\Data_Flow_Empleado\Cantidad de Registros Modificados"
+          TopLeft="364.583313413379,326.999997830391" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Data_Flow_Empleado\Datamart Employee"
+          TopLeft="76.2499958338839,468.516663709068" />
+        <NodeLayout
+          Size="189.6,41.6"
+          Id="Package\Data_Flow_Empleado\Combinación de mezcla"
+          TopLeft="226.249987638245,180.916665408594" />
+        <NodeLayout
+          Size="187.2,41.6"
+          Id="Package\Data_Flow_Empleado\Ordenar Dim Empleado"
+          TopLeft="391.249978623043,108.116665914837" />
+        <NodeLayout
+          Size="196,41.6"
+          Id="Package\Data_Flow_Empleado\Ordenar Stage Empleado"
+          TopLeft="72.9166626826758,106.383332593557" />
+        <NodeLayout
+          Size="136.8,41.6"
+          Id="Package\Data_Flow_Empleado\Multidifusión"
+          TopLeft="654.166630924578,280.138886977926" />
+        <NodeLayout
+          Size="148.8,41.6"
+          Id="Package\Data_Flow_Empleado\Dim_Employee"
+          TopLeft="407.916644379084,40.5166663849188" />
+        <NodeLayout
+          Size="241.6,41.6"
+          Id="Package\Data_Flow_Empleado\Actualizar Registros en el Datamart"
+          TopLeft="373.958312901152,468.333330591188" />
+        <EdgeLayout
+          Id="Package\Data_Flow_Empleado.Paths[Salida no seleccionada de muestreo]"
+          TopLeft="486.899980193874,368.599997830391">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.316666222198"
+              Start="0,0"
+              End="0,22.816666222198">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.816666222198" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-79.4976953125,6.53382139234898,158.995390625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data_Flow_Empleado.Paths[Salida de Recuento de filas 1]"
+          TopLeft="162.862496226592,369.716664685392">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,98.799999023676"
+              Start="0,0"
+              End="0,91.299999023676">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,91.299999023676" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data_Flow_Empleado.Paths[Salida de origen de OLE DB1]"
+          TopLeft="483.583311501064,82.1166663849188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.9999995299181"
+              Start="0,0"
+              End="0,18.4999995299181">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.4999995299181" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data_Flow_Empleado.Paths[Salida de origen de OLE DB]"
+          TopLeft="172.766662068003,79.5166664029989">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.866666190558"
+              Start="0,0"
+              End="0,19.366666190558">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.366666190558" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data_Flow_Empleado.Paths[Salida de ordenación1]"
+          TopLeft="484.849978623044,149.716665914837">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-133.533324318131,31.1999994937576"
+              Start="0,0"
+              End="-133.533324318131,23.6999994937576">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.5633469791311" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.5633469791311"
+                    Point2="0,18.5633469791311"
+                    Point3="-4,18.5633469791311" />
+                  <mssgle:LineSegment
+                    End="-129.533324318131,18.5633469791311" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-129.533324318131,18.5633469791311"
+                    Point2="-133.533324318131,18.5633469791311"
+                    Point3="-133.533324318131,22.5633469791311" />
+                  <mssgle:LineSegment
+                    End="-133.533324318131,23.6999994937576" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data_Flow_Empleado.Paths[Salida de ordenación]"
+          TopLeft="170.916662682676,147.983332593557">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119.866658288903,32.9333328150376"
+              Start="0,0"
+              End="119.866658288903,25.4333328150376">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.5946440430893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,15.5946440430893"
+                    Point2="0,19.5946440430893"
+                    Point3="4,19.5946440430893" />
+                  <mssgle:LineSegment
+                    End="115.866658288903,19.5946440430893" />
+                  <mssgle:CubicBezierSegment
+                    Point1="115.866658288903,19.5946440430893"
+                    Point2="119.866658288903,19.5946440430893"
+                    Point3="119.866658288903,23.5946440430893" />
+                  <mssgle:LineSegment
+                    End="119.866658288903,25.4333328150376" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data_Flow_Empleado.Paths[Salida de combinación de mezcla]"
+          TopLeft="322.230542856111,222.516665408594">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.7944439688383"
+              Start="0,0"
+              End="0,19.2944439688383">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.2944439688383" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data_Flow_Empleado.Paths[Salida de comando de OLE DB]"
+          TopLeft="492.18747993776,440.516664052589">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.816666538599"
+              Start="0,0"
+              End="0,20.316666538599">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.316666538599" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data_Flow_Empleado.Paths[Empleados_Modificados]"
+          TopLeft="350.344431407309,290.911109377433">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="133.83888200607,36.0888884529581"
+              Start="0,0"
+              End="133.83888200607,28.5888884529581">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.6379229799849" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.6379229799849"
+                    Point2="0,14.6379229799849"
+                    Point3="4,14.6379229799849" />
+                  <mssgle:LineSegment
+                    End="129.83888200607,14.6379229799849" />
+                  <mssgle:CubicBezierSegment
+                    Point1="129.83888200607,14.6379229799849"
+                    Point2="133.83888200607,14.6379229799849"
+                    Point3="133.83888200607,18.6379229799849" />
+                  <mssgle:LineSegment
+                    End="133.83888200607,28.5888884529581" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="13.9168628780351,19.6379229799849,106.00515625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data_Flow_Empleado.Paths[Empleado Nuevo]"
+          TopLeft="296.477764740642,290.911109377433">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-132.202768121343,37.2055553079589"
+              Start="0,0"
+              End="-132.202768121343,29.7055553079589">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.0908514052843" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.0908514052843"
+                    Point2="0,15.0908514052843"
+                    Point3="-4,15.0908514052843" />
+                  <mssgle:LineSegment
+                    End="-128.202768121343,15.0908514052843" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-128.202768121343,15.0908514052843"
+                    Point2="-132.202768121343,15.0908514052843"
+                    Point3="-132.202768121343,19.0908514052843" />
+                  <mssgle:LineSegment
+                    End="-132.202768121343,29.7055553079589" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-103.768415310672,20.0908514052843,75.3340625,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data_Flow_Empleado\Dim_Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data_Flow_Empleado\Datamart Employee">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data_Flow_Empleado\Stage_Empleado">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
